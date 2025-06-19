@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El uso excesivo de redes sociales en adolescentes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        .slide h1 {
+            font-size: 3em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .slide h2 {
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            color: #FFD700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .slide h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #87CEEB;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .slide p, .slide li {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out 0.7s both;
+        }
+
+        .slide ul {
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .slide li {
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .stat {
+            font-size: 1.8em;
+            color: #FF6B6B;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .controls button {
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .controls button:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 1.1em;
+        }
+
+        .team-info {
+            font-size: 1.1em;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+
+        .conclusion-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #FFD700;
+            margin: 20px 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">12</span>
+        </div>
+
+        <!-- Slide 1: Portada -->
+        <div class="slide active">
+            <div class="icon">📱</div>
+            <h1>El uso excesivo de redes sociales debilita las habilidades comunicativas interpersonales de los adolescentes</h1>
+            <p class="highlight" style="font-size: 1.5em;">¿Conexión digital = Desconexión real?</p>
+            <div class="team-info">
+                <p><strong>Autores:</strong></p>
+                <p>Arboccó Zamudio Fabián Ernesto • Rojas Zuta Kenny Anderson</p>
+                <p>Quinto Castillo Ricardo Joel • Granados Melgarejo Alexander Joel</p>
+                <p><strong>Curso:</strong> Redacción y argumentación de textos</p>
+                <p><strong>Profesora:</strong> Rivera Gil, Silvana</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Contexto Digital -->
+        <div class="slide">
+            <div class="icon">🌐</div>
+            <h2>La Era Digital Contemporánea</h2>
+            <div class="stat">7-9 horas diarias en plataformas digitales</div>
+            <ul>
+                <li><strong>85% del tiempo</strong> de interacción social se concentra en Instagram, TikTok y WhatsApp</li>
+                <li>Los <span class="highlight">"nativos digitales"</span> priorizan la comunicación virtual</li>
+                <li>Modificación de patrones tradicionales de interacción social</li>
+            </ul>
+            <p><em>Fuente: Informe Digital 2024 y Estudio de Comunicación Adolescente 2024</em></p>
+        </div>
+
+        <!-- Slide 3: La Paradoja -->
+        <div class="slide">
+            <div class="icon">⚖️</div>
+            <h2>La Paradoja Inquietante</h2>
+            <div style="display: flex; justify-content: space-around; align-items: center; width: 100%;">
+                <div style="text-align: center;">
+                    <h3 style="color: #90EE90;">✅ Promesas</h3>
+                    <ul style="text-align: left;">
+                        <li>Conexión global</li>
+                        <li>Acceso inmediato</li>
+                        <li>Información diversa</li>
+                    </ul>
+                </div>
+                <div style="font-size: 3em;">VS</div>
+                <div style="text-align: center;">
+                    <h3 style="color: #FF6B6B;">❌ Realidad</h3>
+                    <ul style="text-align: left;">
+                        <li>Riesgos para habilidades sociales</li>
+                        <li>Dependencia tecnológica</li>
+                        <li>Ansiedad social</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="stat">68% de adolescentes reportan ansiedad social sin dispositivos</div>
+        </div>
+
+        <!-- Slide 4: Tesis Principal -->
+        <div class="slide">
+            <div class="icon">🎯</div>
+            <h2>Tesis Principal</h2>
+            <div class="conclusion-box">
+                <p style="font-size: 1.6em; font-weight: bold;">El uso excesivo de las redes sociales <span class="highlight">debilita</span> las habilidades comunicativas interpersonales de los adolescentes y genera una <span class="highlight">falsa sensación</span> de conexión emocional.</p>
+            </div>
+            <h3>¿Cómo ocurre esto?</h3>
+            <ul>
+                <li><strong>Limita</strong> las oportunidades de comunicación presencial</li>
+                <li><strong>Prioriza</strong> la cantidad sobre la calidad de interacciones</li>
+                <li><strong>Genera</strong> vínculos superficiales</li>
+            </ul>
+        </div>
+
+        <!-- Slide 5: Primer Argumento -->
+        <div class="slide">
+            <div class="icon">🗣️</div>
+            <h2>Argumento 1: Deterioro de Habilidades Presenciales</h2>
+            <h3>Pérdida progresiva de capacidades comunicativas cara a cara</h3>
+            <ul>
+                <li><strong>Incapacidad para interpretar</strong> señales no verbales</li>
+                <li><strong>Dificultad para mantener</strong> conversaciones prolongadas</li>
+                <li><strong>Pérdida de competencias:</strong> expresiones faciales, gestos, tonos de voz</li>
+            </ul>
+            <div class="conclusion-box">
+                <p><strong>Analogía:</strong> Como "comida rápida" vs "nutrición integral" - satisface lo inmediato pero carece de nutrientes esenciales</p>
+            </div>
+            <p><em>Investigación: Rubio Hernández, González Calahorra, y Olivio Franco (2024)</em></p>
+        </div>
+
+        <!-- Slide 6: Efectos del Primer Argumento -->
+        <div class="slide">
+            <div class="icon">😰</div>
+            <h2>Consecuencias del Deterioro Comunicacional</h2>
+            <div class="stat">68% experimenta ansiedad en conversaciones cara a cara</div>
+            <ul>
+                <li><strong>Reducción de tolerancia</strong> a diálogos espontáneos</li>
+                <li><strong>Incomodidad significativa</strong> sin mediación tecnológica</li>
+                <li><strong>Fragilidad cognitiva</strong> alarmante</li>
+                <li><strong>Ansiedad social</strong> creciente</li>
+            </ul>
+            <div class="conclusion-box">
+                <p><strong>Paradoja:</strong> Hiperconectados digitalmente pero aislados en relaciones presenciales</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Segundo Argumento -->
+        <div class="slide">
+            <div class="icon">💔</div>
+            <h2>Argumento 2: Falsa Sensación de Conexión</h2>
+            <h3>Priorización de cantidad sobre calidad</h3>
+            <ul>
+                <li><strong>Validación superficial</strong> a través de "likes" y comentarios</li>
+                <li><strong>Reemplazo del apoyo emocional</strong> auténtico</li>
+                <li><strong>Dependencia hacia medición digital</strong> de autoestima</li>
+                <li><strong>Abandono de conversaciones profundas</strong> y apoyo genuino</li>
+            </ul>
+            <div class="conclusion-box">
+                <p><strong>Ironía cruel:</strong> Números digitales abstractos definen el valor personal</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Caso Instagram -->
+        <div class="slide">
+            <div class="icon">📸</div>
+            <h2>Caso Instagram: La Trampa de la Validación</h2>
+            <ul>
+                <li><strong>Dependencia de "likes"</strong> para medir autoestima</li>
+                <li><strong>Creación de versiones idealizadas</strong> de sí mismos</li>
+                <li><strong>Distanciamiento de emociones reales</strong></li>
+                <li><strong>Afectación grave</strong> en capacidad para relaciones genuinas</li>
+            </ul>
+            <div class="stat">Los adolescentes invierten tiempo considerable en obtener validación externa</div>
+            <p><em>Tonato Ruales y Valencia Nuñez (2023)</em></p>
+        </div>
+
+        <!-- Slide 9: Caso TikTok -->
+        <div class="slide">
+            <div class="icon">🎵</div>
+            <h2>Caso TikTok: El Fenómeno FOMO</h2>
+            <h3>Fear of Missing Out (Miedo a perderse algo)</h3>
+            <ul>
+                <li><strong>Exposición constante</strong> a vidas aparentemente perfectas</li>
+                <li><strong>Comparación destructiva</strong> e insatisfacción personal</li>
+                <li><strong>Ciclo vicioso</strong> de búsqueda de validación externa</li>
+                <li><strong>Alejamiento de la realidad</strong> inmediata</li>
+            </ul>
+            <div class="conclusion-box">
+                <p><strong>Antítesis perturbadora:</strong> Más conectados virtualmente = Más aislados emocionalmente</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Síntesis de Problemas -->
+        <div class="slide">
+            <div class="icon">⚠️</div>
+            <h2>Mecanismos Destructivos Identificados</h2>
+            <div style="display: flex; justify-content: space-around; width: 100%;">
+                <div style="text-align: center;">
+                    <h3 style="color: #FF6B6B;">Mecanismo 1</h3>
+                    <ul style="text-align: left;">
+                        <li>Limitación de comunicación presencial</li>
+                        <li>Deterioro de habilidades no verbales</li>
+                        <li>Pérdida de empatía en tiempo real</li>
+                    </ul>
+                </div>
+                <div style="text-align: center;">
+                    <h3 style="color: #FF6B6B;">Mecanismo 2</h3>
+                    <ul style="text-align: left;">
+                        <li>Priorización de interacciones superficiales</li>
+                        <li>Validación digital externa</li>
+                        <li>Vacío emocional profundo</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="stat">Resultado: Generación hiperconectada pero emocionalmente aislada</div>
+        </div>
+
+        <!-- Slide 11: Conclusiones -->
+        <div class="slide">
+            <div class="icon">💡</div>
+            <h2>Conclusiones</h2>
+            <div class="conclusion-box">
+                <p><strong>El uso excesivo de redes sociales afecta negativamente las habilidades comunicativas y relaciones emocionales auténticas</strong></p>
+            </div>
+            <ul>
+                <li><strong>Erosión de competencias comunicativas</strong> fundamentales</li>
+                <li><strong>Dificultades crecientes</strong> para vínculos auténticos</li>
+                <li><strong>Falsa sensación de conexión</strong> que no satisface necesidades reales</li>
+                <li><strong>Dependencia hacia validación digital</strong> externa</li>
+            </ul>
+            <p class="highlight">Generación con vacío emocional profundo que perpetúa la dependencia tecnológica</p>
+        </div>
+
+        <!-- Slide 12: Propuestas -->
+        <div class="slide">
+            <div class="icon">🌟</div>
+            <h2>Propuestas de Solución</h2>
+            <h3>Es imperativo encontrar el equilibrio</h3>
+            <ul>
+                <li><strong>Equilibrar conscientemente</strong> redes sociales con interacciones presenciales</li>
+                <li><strong>Familias e instituciones</strong> deben asumir responsabilidad</li>
+                <li><strong>Promover conciencia crítica</strong> sobre riesgos emocionales</li>
+                <li><strong>Implementar estrategias educativas</strong> para relaciones genuinas</li>
+            </ul>
+            <div class="conclusion-box">
+                <p><strong>Objetivo:</strong> Formar jóvenes capaces de navegar exitosamente tanto en el ecosistema digital como en relaciones humanas auténticas</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button onclick="previousSlide()">⬅ Anterior</button>
+            <button onclick="nextSlide()">Siguiente ➡</button>
+            <button onclick="toggleFullscreen()">🖥️ Pantalla Completa</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('total-slides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function(event) {
+            switch(event.key) {
+                case 'ArrowRight':
+                case ' ':
+                    nextSlide();
+                    break;
+                case 'ArrowLeft':
+                    previousSlide();
+                    break;
+                case 'f':
+                case 'F':
+                    toggleFullscreen();
+                    break;
+            }
+        });
+
+        // Auto-avance opcional (descomentá para activar)
+        // setInterval(nextSlide, 10000); // Cambia cada 10 segundos
+    </script>
+</body>
+</html>
